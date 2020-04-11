@@ -1,6 +1,8 @@
-import { createMuiTheme, ThemeOptions } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 import green from '@material-ui/core/colors/green';
 import purple from '@material-ui/core/colors/purple';
+
+import ITheme from './ITheme';
 
 const primaryGreen = green[500];
 const accentGreen = green.A200;
@@ -9,7 +11,7 @@ const primaryPurple = purple[500];
 const accentPurple = purple.A200;
 const darkPurple = purple[900];
 
-export const overridings: ThemeOptions & { name: string } = {
+const overridings: ITheme = {
   name: 'Dark Theme',
   palette: {
     type: 'dark',
