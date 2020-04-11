@@ -8,7 +8,7 @@ export default {
 };
 
 export const Default = () => (
-  <Button onClick={action('Default button clicked')} variant="contained">
+  <Button onClick={action('Default button clicked')} variant="outlined">
     Default
   </Button>
 );
@@ -20,7 +20,7 @@ export const Primary = () => (
 );
 
 export const Secondary = () => (
-  <Button color="secondary" onClick={action('Secondary button clicked')} variant="contained">
+  <Button color="secondary" onClick={action('Secondary button clicked')} variant="text">
     Secondary
   </Button>
 );

@@ -12,13 +12,13 @@ const darkPurple = purple[900];
 export const overridings: ThemeOptions & { name: string } = {
   name: 'Dark Theme',
   palette: {
+    type: 'dark',
     primary: {
       light: accentPurple,
       main: primaryPurple,
       dark: darkPurple,
       contrastText: '#fff',
     },
-    type: 'dark',
     secondary: {
       light: accentGreen,
       main: primaryGreen,
@@ -28,21 +28,4 @@ export const overridings: ThemeOptions & { name: string } = {
   },
 };
 
-export default createMuiTheme({
-  name: 'Dark Theme',
-  palette: {
-    primary: {
-      light: accentPurple,
-      main: primaryPurple,
-      dark: darkPurple,
-      contrastText: '#fff',
-    },
-    type: 'dark',
-    secondary: {
-      light: accentGreen,
-      main: primaryGreen,
-      dark: darkGreen,
-      contrastText: '#fff',
-    },
-  },
-} as ThemeOptions);
+export default createMuiTheme(overridings);

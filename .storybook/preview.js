@@ -1,10 +1,14 @@
-import { addDecorator, configure, addParameters } from '@storybook/react';
+import { addDecorator, addParameters } from '@storybook/react';
 
 import { withThemesProvider } from 'storybook-addon-styled-component-theme';
 import ThemeProvider from './ThemeProvider';
 
+// Component Library Themes
 import LightTheme from '../src/themes/lightTheme';
 import DarkTheme from '../src/themes/darkTheme';
+
+// Storybook Theme
+import storybookTheme from './storybookTheme';
 
 const themes = [LightTheme, DarkTheme];
 
@@ -18,7 +22,8 @@ addParameters({
             }
 
             return 0;
-        }
+        },
+        theme: storybookTheme,
     }
 });
 

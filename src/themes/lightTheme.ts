@@ -12,6 +12,7 @@ const darkPurple = purple[900];
 export const overridings: ThemeOptions & { name: string } = {
   name: 'Light Theme',
   palette: {
+    type: 'light',
     primary: {
       light: accentGreen,
       main: primaryGreen,
