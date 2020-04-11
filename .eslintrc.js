@@ -3,12 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb-typescript',
-    'plugin:prettier/recommended',
-    'prettier/react'
-  ],
+  extends: ['plugin:react/recommended', 'airbnb-typescript', 'plugin:prettier/recommended', 'prettier/react'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -22,15 +17,13 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-  ],
+  plugins: ['react', '@typescript-eslint'],
   rules: {
+    'spaced-comment': ['error', 'always', { markers: ['/'] }],
   },
   overrides: [
     {
-      files: ['*.test.tsx', '*.test.ts'],
+      files: ['*.test.tsx', '*.test.ts', 'setupTests.ts'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
       },
