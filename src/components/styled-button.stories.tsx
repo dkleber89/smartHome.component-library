@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import { action } from '@storybook/addon-actions';
 
@@ -8,4 +8,4 @@ export default {
   title: 'Styled Button',
 };
 
-export const Default = () => <StyledButton onClick={action('Styled button clicked')}>Styled Button</StyledButton>;
+export const Default = (): ReactElement => <StyledButton onClick={action('Styled button clicked')}>Styled Button</StyledButton>;

@@ -13,18 +13,18 @@ import storybookTheme from './storybookTheme';
 const themes = [LightTheme, DarkTheme];
 
 addParameters({
-    options: {
-        storySort: (a, b) => {
-            if(a[1].kind === 'Introduction') {
-                return -1;
-            } else if (b[1].kind === 'Introduction') {
-                return 1;
-            }
+  options: {
+    storySort: (a, b) => {
+      if (a[1].kind === 'Introduction') {
+        return -1;
+      } else if (b[1].kind === 'Introduction') {
+        return 1;
+      }
 
-            return 0;
-        },
-        theme: storybookTheme,
-    }
+      return 0;
+    },
+    theme: storybookTheme,
+  },
 });
 
 addDecorator(withThemesProvider(themes, ThemeProvider));

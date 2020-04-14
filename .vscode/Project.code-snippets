@@ -1,30 +1,30 @@
 {
-	"Story": {
-		"prefix": "story",
-		"body": [
-		  "import React, { ReactElement } from 'react';",
-		  "import { action } from '@storybook/addon-actions';",
-		  "import { withKnobs } from '@storybook/addon-knobs';",
-		  "",
-		  "import { ${TM_FILENAME_BASE/(.*)\\..+$/$1/} } from './${TM_FILENAME_BASE/(.*)\\..+$/$1/}';",
-		  "",
-		  "export default {",
-		  "  title: '${TM_FILENAME_BASE/(.*)\\..+$/$1/}',",
-		  "  component: ${TM_FILENAME_BASE/(.*)\\..+$/$1/},",
-		  "  decorators: [withKnobs],",
-		  "  parameters: {",
-		  "    info: `",
-		  "    ### Additional Markdown Information about this Component",
-		  "    `,",
-		  "  },",
-		  "};",
-		  "",
-		  "export const Default = (): ReactElement => (",
-		  "  <${TM_FILENAME_BASE/(.*)\\..+$/$1/} />",
-		  ");"
-		],
-		"description": "Story"
-	},
+  "Story": {
+    "prefix": "story",
+    "body": [
+      "import React, { ReactElement } from 'react';",
+      "import { action } from '@storybook/addon-actions';",
+      "import { withKnobs } from '@storybook/addon-knobs';",
+      "",
+      "import { ${TM_FILENAME_BASE/(.*)\\..+$/$1/} } from './${TM_FILENAME_BASE/(.*)\\..+$/$1/}';",
+      "",
+      "export default {",
+      "  title: '${TM_FILENAME_BASE/(.*)\\..+$/$1/}',",
+      "  component: ${TM_FILENAME_BASE/(.*)\\..+$/$1/},",
+      "  decorators: [withKnobs],",
+      "  parameters: {",
+      "    info: `",
+      "    ### Additional Markdown Information about this Component",
+      "    `,",
+      "  },",
+      "};",
+      "",
+      "export const Default = (): ReactElement => (",
+      "  <${TM_FILENAME_BASE/(.*)\\..+$/$1/} />",
+      ");"
+    ],
+    "description": "Story"
+  },
   "Component": {
     "prefix": "component",
     "body": [
