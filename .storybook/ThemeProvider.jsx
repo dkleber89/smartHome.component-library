@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
-import { StylesProvider } from "@material-ui/styles";
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import { StylesProvider } from '@material-ui/styles';
 
-import { ThemeProvider as StyledThemeProvider } from "styled-components";
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
 const ThemeProvider = ({ theme, children }) => {
   const nextTheme = Object.assign({}, theme);
@@ -14,7 +14,7 @@ const ThemeProvider = ({ theme, children }) => {
     <StylesProvider injectFirst>
       <StyledThemeProvider theme={nextTheme}>
         <MuiThemeProvider theme={nextTheme}>
-          <CssBaseline/>
+          <CssBaseline />
           {children}
         </MuiThemeProvider>
       </StyledThemeProvider>
@@ -24,7 +24,7 @@ const ThemeProvider = ({ theme, children }) => {
 
 ThemeProvider.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
 };
 
-export default ThemeProvider
+export default ThemeProvider;

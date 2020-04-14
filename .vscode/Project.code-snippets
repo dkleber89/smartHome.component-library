@@ -1,44 +1,44 @@
 {
-	// Place your smartHome.component-library workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
-	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
-	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
-	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
-	// Placeholders with the same ids are connected.
-	// Example:
-	// "Print to console": {
-	// 	"scope": "javascript,typescript",
-	// 	"prefix": "log",
-	// 	"body": [
-	// 		"console.log('$1');",
-	// 		"$2"
-	// 	],
-	// 	"description": "Log output to console"
-	// }
-	"Story": {
-		"prefix": "story",
-		"body": [
-		  "import React, { ReactElement } from 'react';",
-		  "import { action } from '@storybook/addon-actions';",
-		  "import { withKnobs } from '@storybook/addon-knobs';",
-		  "",
-		  "import { ${TM_FILENAME_BASE/(.*)\\..+$/$1/} } from './${TM_FILENAME_BASE/(.*)\\..+$/$1/}';",
-		  "",
-		  "export default {",
-		  "  title: '${TM_FILENAME_BASE/(.*)\\..+$/$1/}',",
-		  "  component: ${TM_FILENAME_BASE/(.*)\\..+$/$1/},",
-		  "  decorators: [withKnobs],",
-		  "  parameters: {",
-		  "    info: `",
-		  "    ### Additional Markdown Information about this Component",
-		  "    `,",
-		  "  },",
-		  "};",
-		  "",
-		  "export const Default = (): ReactElement => (",
-		  "  <${TM_FILENAME_BASE/(.*)\\..+$/$1/} />",
-		  ");"
-		],
-		"description": "Story"
-	  }
+  // Place your smartHome.component-library workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "Story": {
+    "prefix": "story",
+    "body": [
+      "import React, { ReactElement } from 'react';",
+      "import { action } from '@storybook/addon-actions';",
+      "import { withKnobs } from '@storybook/addon-knobs';",
+      "",
+      "import { ${TM_FILENAME_BASE/(.*)\\..+$/$1/} } from './${TM_FILENAME_BASE/(.*)\\..+$/$1/}';",
+      "",
+      "export default {",
+      "  title: '${TM_FILENAME_BASE/(.*)\\..+$/$1/}',",
+      "  component: ${TM_FILENAME_BASE/(.*)\\..+$/$1/},",
+      "  decorators: [withKnobs],",
+      "  parameters: {",
+      "    info: `",
+      "    ### Additional Markdown Information about this Component",
+      "    `,",
+      "  },",
+      "};",
+      "",
+      "export const Default = (): ReactElement => (",
+      "  <${TM_FILENAME_BASE/(.*)\\..+$/$1/} />",
+      ");"
+    ],
+    "description": "Story"
+  }
 }
