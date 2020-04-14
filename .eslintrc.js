@@ -23,7 +23,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.test.tsx', '*.test.ts', 'setupTests.ts'],
+      files: ['*.test.tsx', '*.test.ts', 'setupTests.ts', './src/testUtils/*'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
       },

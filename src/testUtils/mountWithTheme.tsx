@@ -1,12 +1,10 @@
-import { createMount } from '@material-ui/core/test-utils';
 import React, { ReactElement } from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import { StylesProvider, CssBaseline, ThemeProvider as MuiThemeProvider, Theme } from '@material-ui/core';
+import { ReactWrapper, mount } from 'enzyme';
 import lightTheme from '../themes/lightTheme';
 
 function mountWithTheme<compProps>(tree: ReactElement<compProps>, theme: Theme = lightTheme): ReactWrapper<compProps> {
-  const mount = createMount();
-
   const ThemeProviderWrapper = (children: ReactElement) => {
     return (
       <StylesProvider injectFirst>
@@ -20,7 +18,7 @@ function mountWithTheme<compProps>(tree: ReactElement<compProps>, theme: Theme =
     );
   };
 
-  return mount(tree, { wrappingComponent: ThemeProviderWrapper });
+  return mount<compProps>(tree, { wrappingComponent: ThemeProviderWrapper });
 }
 
 export default mountWithTheme;
