@@ -2,35 +2,40 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    es2017: true,
+    jest: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb-typescript',
-    'plugin:prettier/recommended',
-    'prettier/react'
-  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:jest/recommended',
+    'plugin:jest/style',
+    'airbnb-typescript',
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint',
+    'prettier/react',
+  ],
+  settings: {
+    react: {
+      pragma: 'React',
+      version: 'detect',
+    },
+  },
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2018,
-    sourceType: 'module',
     project: './tsconfig.json',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-  ],
   rules: {
+    'spaced-comment': ['error', 'always', { markers: ['/'] }],
   },
   overrides: [
     {
-      files: ['*.test.tsx', '*.test.ts'],
+      files: ['*.test.tsx', '*.test.ts', 'setupTests.ts'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
       },
