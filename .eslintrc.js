@@ -32,6 +32,12 @@ module.exports = {
   },
   rules: {
     'spaced-comment': ['error', 'always', { markers: ['/'] }],
+    '@typescript-eslint/explicit-function-return-type': [
+      'warn',
+      {
+        allowExpressions: true,
+      },
+    ],
   },
   overrides: [
     {
