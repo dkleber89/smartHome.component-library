@@ -1,17 +1,20 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
+import { Button as MuiButton } from '@material-ui/core';
 
 export interface IButtonProps {
   /** Component className */
   className?: string;
 }
 
-const StyledButton = styled.div``;
+const StyledButton = styled(MuiButton)<IButtonProps>`
+  background-color: red;
+`;
 
 StyledButton.displayName = 'StyledButton';
 
 const Button = ({ className }: IButtonProps): ReactElement => {
-  return <StyledButton className={className} />;
+  return <StyledButton className={className}>Fisch</StyledButton>;
 };
 
 export { Button };

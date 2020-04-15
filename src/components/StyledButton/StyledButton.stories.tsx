@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 
 import { action } from '@storybook/addon-actions';
 
-import StyledButton from './styled-button';
+import StyledButton from './StyledButton';
 
 export default {
   title: 'Styled Button',

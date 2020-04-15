@@ -1,24 +1,27 @@
 import React, { ReactElement } from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
-import { StylesProvider, CssBaseline, ThemeProvider as MuiThemeProvider, Theme } from '@material-ui/core';
+import { StylesProvider, MuiThemeProvider, Theme } from '@material-ui/core';
 import { render } from 'enzyme';
-import lightTheme from '../themes/lightTheme';
+import { ITheme, lightTheme } from '../themes';
 
-function renderWithTheme<compProps>(tree: ReactElement<compProps>, theme: Theme = lightTheme): Cheerio {
-  const ThemeProviderWrapper = (children: ReactElement) => {
+interface IThemeProviderWrapperProps {
+  children: ReactElement;
+}
+
+function renderWithTheme<compProps>(tree: ReactElement<compProps>, theme: Theme & ITheme = lightTheme): Cheerio {
+  React.useLayoutEffect = React.useEffect;
+
+  const ThemeProviderWrapper = ({ children }: IThemeProviderWrapperProps): ReactElement => {
     return (
       <StylesProvider injectFirst>
         <StyledThemeProvider theme={theme}>
-          <MuiThemeProvider theme={theme}>
-            <CssBaseline />
-            {children}
-          </MuiThemeProvider>
+          <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
         </StyledThemeProvider>
       </StylesProvider>
     );
   };
 
-  return render<compProps, any>(tree, { wrappingComponent: ThemeProviderWrapper });
+  return render<compProps, never>(tree, { wrappingComponent: ThemeProviderWrapper });
 }
 
 export default renderWithTheme;

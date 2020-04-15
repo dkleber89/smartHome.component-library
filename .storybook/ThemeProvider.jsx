@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import { StylesProvider } from '@material-ui/styles';
 
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';

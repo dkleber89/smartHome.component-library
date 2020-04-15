@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme, Theme } from '@material-ui/core/styles';
 import green from '@material-ui/core/colors/green';
 import purple from '@material-ui/core/colors/purple';
 
@@ -30,4 +30,4 @@ const overridings: ITheme = {
   },
 };
 
-export default createMuiTheme(overridings);
+export default createMuiTheme(overridings) as Theme & ITheme;

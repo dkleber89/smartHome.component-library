@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Snapshottesting Test 1`] = `
+.c0 {
+  background-color: red;
+}
+
+<button
+  class="MuiButtonBase-root MuiButton-root MuiButton-text c0"
+  tabindex="0"
+  type="button"
+>
+  <span
+    class="MuiButton-label"
+  >
+    Fisch
+  </span>
+</button>
+`;
