@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm: storybook",
+      "type": "npm",
+      "script": "storybook",
+      "detail": "Start Storybook for Debugging",
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "base": "$tsc-watch",
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "info",
+            "endsPattern": "webpack built"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -2,8 +2,10 @@ import React, { ReactElement } from 'react';
 
 import Button from '@material-ui/core/Button';
 import { action } from '@storybook/addon-actions';
+import { Button as OwnButton } from './Button';
 
 export default {
+  component: OwnButton,
   title: 'Material Button',
 };
 
@@ -24,3 +26,5 @@ export const Secondary = (): ReactElement => (
     Secondary
   </Button>
 );
+
+export const Test = (): ReactElement => <OwnButton />;

@@ -14,7 +14,7 @@ const StyledButton = styled(MuiButton)<IButtonProps>`
 `;
 
 const StyledSpan = styled.span`
-  background-color: green;
+  background-color: blue;
 `;
 
 const Button = ({ className, onClick }: IButtonProps): ReactElement => {
