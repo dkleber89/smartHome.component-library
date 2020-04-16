@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import { Button as MuiButton } from '@material-ui/core';
 
-export interface IButtonProps {
+interface IButtonProps {
   /** Component className */
   className?: string;
   /** Click Event Handler */
@@ -26,4 +26,4 @@ const Button = ({ className, onClick }: IButtonProps): ReactElement => {
   );
 };
 
-export { Button };
+export default Button;

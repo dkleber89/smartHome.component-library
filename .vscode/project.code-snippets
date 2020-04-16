@@ -6,7 +6,7 @@
       "import { action } from '@storybook/addon-actions';",
       "import { withKnobs } from '@storybook/addon-knobs';",
       "",
-      "import { ${TM_FILENAME_BASE/(.*)\\..+$/$1/} } from './${TM_FILENAME_BASE/(.*)\\..+$/$1/}';",
+      "import ${TM_FILENAME_BASE/(.*)\\..+$/$1/} from './${TM_FILENAME_BASE/(.*)\\..+$/$1/}';",
       "",
       "export default {",
       "  title: '${TM_FILENAME_BASE/(.*)\\..+$/$1/}',",
@@ -42,7 +42,7 @@
       "  return <Styled${TM_FILENAME_BASE} className={className} />;",
       "};",
       "",
-      "export { ${TM_FILENAME_BASE} };",
+      "export default ${TM_FILENAME_BASE};",
       ""
     ],
     "description": "Component independent from Material UI"
@@ -65,7 +65,7 @@
       "  return <Styled${TM_FILENAME_BASE} className={className} />;",
       "};",
       "",
-      "export { ${TM_FILENAME_BASE} };",
+      "export default ${TM_FILENAME_BASE};",
       ""
     ],
     "description": "Component with styled MUI Component"
@@ -92,7 +92,7 @@
       "  );",
       "};",
       "",
-      "export { ${TM_FILENAME_BASE} };",
+      "export default ${TM_FILENAME_BASE};",
       ""
     ],
     "description": "Own Component with own or Material Components inside"

@@ -1,1 +1,3 @@
-export * from './customTestingLibrary';
+import renderWithTheme from './renderWithTheme';
+
+export default renderWithTheme;

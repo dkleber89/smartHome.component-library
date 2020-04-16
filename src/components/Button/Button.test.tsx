@@ -1,7 +1,8 @@
 import React from 'react';
-import { renderWithTheme, RenderResult, fireEvent } from '../../testUtils';
+import { RenderResult, fireEvent } from '@testing-library/react';
+import renderWithTheme from '../../testUtils';
 
-import { Button } from './Button';
+import Button from './Button';
 import { lightTheme } from '../../themes';
 
 describe('Button test', () => {
