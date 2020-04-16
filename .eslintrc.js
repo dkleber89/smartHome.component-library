@@ -1,8 +1,7 @@
 module.exports = {
   env: {
-    browser: true,
-    es6: true,
     es2017: true,
+    browser: true,
     jest: true,
   },
   globals: {
@@ -15,6 +14,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:jest/recommended',
     'plugin:jest/style',
+    'plugin:testing-library/recommended',
     'airbnb-typescript',
     'plugin:prettier/recommended',
     'prettier/@typescript-eslint',
@@ -29,7 +29,11 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
-    ecmaVersion: 2017,
+    sourceType: 'module',
+    ecmaVersion: 2018,
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
   rules: {
     'spaced-comment': ['error', 'always', { markers: ['/'] }],
@@ -40,6 +44,7 @@ module.exports = {
         allowExpressions: true,
       },
     ],
+    'testing-library/no-debug': ['error', { renderFunctions: ['renderWithTheme'] }],
   },
   overrides: [
     {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, RenderResult } from '../../testUtils';
+import { renderWithTheme, RenderResult } from '../../testUtils';
 
 import { Button } from './Button';
 
@@ -7,7 +7,7 @@ describe('Button Test', () => {
   let renderResult: RenderResult;
 
   beforeEach(() => {
-    renderResult = render(<Button />);
+    renderResult = renderWithTheme(<Button />);
   });
 
   test('Snapshot', () => {

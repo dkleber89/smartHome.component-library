@@ -5,7 +5,7 @@ import { StylesProvider, ThemeProvider as MuiThemeProvider, Theme } from '@mater
 
 import { ITheme, lightTheme } from '../themes';
 
-function customRender(component: ReactElement, options?: RenderOptions, theme: Theme & ITheme = lightTheme): RenderResult {
+function renderWithTheme(component: ReactElement, options?: RenderOptions, theme: Theme & ITheme = lightTheme): RenderResult {
   const Providers = (): ReactElement => {
     return (
       <StylesProvider injectFirst>
@@ -23,4 +23,4 @@ function customRender(component: ReactElement, options?: RenderOptions, theme: T
 export * from '@testing-library/react';
 
 // override render method
-export { customRender as render };
+export { renderWithTheme };
