@@ -1,17 +1,16 @@
 import React from 'react';
-import { ReactWrapper } from 'enzyme';
-import { mountWithTheme } from '../../testUtils';
+import { render, RenderResult } from '../../testUtils';
 
-import { Button, IButtonProps } from './Button';
+import { Button } from './Button';
 
-describe('Test Button', () => {
-  let wrapper: ReactWrapper;
+describe('Button Test', () => {
+  let renderResult: RenderResult;
 
   beforeEach(() => {
-    wrapper = mountWithTheme<IButtonProps>(<Button />);
+    renderResult = render(<Button />);
   });
 
-  test('Test', () => {
-    expect(wrapper).toMatchSnapshot();
+  test('Snapshot', () => {
+    expect(renderResult.container.firstChild).toMatchSnapshot();
   });
 });
