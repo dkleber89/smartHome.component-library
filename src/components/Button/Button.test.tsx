@@ -1,17 +1,17 @@
-/**
- * @jest-environment node
- */
 import React from 'react';
-import { shallowWithTheme, mountWithTheme, renderWithTheme } from '../../testUtils';
+import { ReactWrapper } from 'enzyme';
+import { mountWithTheme } from '../../testUtils';
 
 import { Button, IButtonProps } from './Button';
 
-describe('Button Snapshottesting', () => {
-  /* @jest-environment node */
+describe('Test Button', () => {
+  let wrapper: ReactWrapper;
+
+  beforeEach(() => {
+    wrapper = mountWithTheme<IButtonProps>(<Button />);
+  });
 
   test('Test', () => {
-    const wrapper = renderWithTheme<IButtonProps>(<Button />);
-
     expect(wrapper).toMatchSnapshot();
   });
 });

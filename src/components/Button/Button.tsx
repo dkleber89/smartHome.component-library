@@ -8,7 +8,7 @@ export interface IButtonProps {
 }
 
 const StyledButton = styled(MuiButton)<IButtonProps>`
-  background-color: red;
+  background-color: ${props => props.theme.palette.primary.light};
 `;
 
 StyledButton.displayName = 'StyledButton';
