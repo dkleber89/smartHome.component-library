@@ -1,8 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button Test Snapshot 1`] = `
+exports[`Button test snapshot 1`] = `
 .c0 {
   background-color: #69f0ae;
+}
+
+.c1 {
+  background-color: green;
 }
 
 <button
@@ -13,6 +17,9 @@ exports[`Button Test Snapshot 1`] = `
   <span
     class="MuiButton-label"
   >
+    <span
+      class="c1"
+    />
     Fisch
   </span>
   <span
