@@ -34,12 +34,18 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install Dependencies
-        run: npm ci
+        uses: Borales/actions-yarn@v2.1.0
+        with:
+          cmd: install
 
       - name: Perform lint
-        run: npm run lint
+        uses: Borales/actions-yarn@v2.1.0
+        with:
+          cmd: lint
 
       - name: Perform test with Jest over React-Scripts
-        run: npm test
+        uses: Borales/actions-yarn@v2.1.0
+        with:
+          cmd: test
         env:
           CI: "true"
