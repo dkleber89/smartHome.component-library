@@ -16,7 +16,11 @@ function renderWithTheme(component: ReactElement, options?: RenderOptions, theme
     );
   };
 
-  return render(component, { wrapper: Providers, ...options });
+  const rendered = render(component, { wrapper: Providers, ...options });
+  return {
+    ...rendered,
+    rerender: (ui: ReactElement) => renderWithTheme(ui, { container: rendered.container, ...options }, theme),
+  };
 }
 
 export default renderWithTheme;

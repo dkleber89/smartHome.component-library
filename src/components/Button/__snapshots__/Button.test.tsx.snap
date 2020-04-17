@@ -6,7 +6,7 @@ exports[`Button test snapshot 1`] = `
 }
 
 .c1 {
-  background-color: green;
+  background-color: blue;
 }
 
 <button

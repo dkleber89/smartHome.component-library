@@ -23,7 +23,7 @@
       "  <${TM_FILENAME_BASE/(.*)\\..+$/$1/} />",
       ");"
     ],
-    "description": "Story"
+    "description": "Story Template with default Story"
   },
   "componentStyled": {
     "prefix": "componentStyled",
@@ -96,5 +96,78 @@
       ""
     ],
     "description": "Own Component with own or Material Components inside"
+  },
+  "test": {
+    "prefix": "test",
+    "body": [
+      "import React from 'react';",
+      "import { RenderResult } from '@testing-library/react';",
+      "import renderWithTheme from '../../testUtils';",
+      "",
+      "import ${TM_FILENAME_BASE/(.*)\\..+$/$1/} from './${TM_FILENAME_BASE/(.*)\\..+$/$1/}';",
+      "",
+      "describe('${TM_FILENAME_BASE/(.*)\\..+$/$1/} test', () => {",
+      "  test('snapshot', () => {",
+      "    const { container } = renderWithTheme(<${TM_FILENAME_BASE/(.*)\\..+$/$1/} />);",
+      "",
+      "    expect(container.firstChild).toMatchSnapshot();",
+      "  });",
+      "",
+      "  // Test Props -> Snippet: testProps",
+      "",
+      "  // Test Events -> Snippet: testEvents",
+      "});",
+      ""
+    ],
+    "description": "Test Template with main Test Content"
+  },
+  "testEvents": {
+    "prefix": "testEvents",
+    "body": [
+      "  describe('events', () => {",
+      "    let renderResult: RenderResult;",
+      "    const on${1/(.)/${1:/upcase}/}Mock = jest.fn();",
+      "",
+      "    beforeEach(() => {",
+      "      renderResult = renderWithTheme(<${TM_FILENAME_BASE/(.*)\\..+$/$1/} on${1/(.)/${1:/upcase}/}={on${1/(.)/${1:/upcase}/}Mock} />);",
+      "    });",
+      "",
+      "    test('${1/(.)/${1:/downcase}/}', () => {",
+      "      // Example when is a click Event e.g. on a Button",
+      "      // fireEvent.click(renderResult.getByText(/Visible Text/));",
+      "",
+      "      expect(on${1/(.)/${1:/upcase}/}Mock).toHaveBeenCalledTimes(1);",
+      "    });",
+      "  });"
+    ],
+    "description": "Test Events Snippet"
+  },
+  "testProps": {
+    "prefix": "testProps",
+    "body": [
+      "  describe('props', () => {",
+      "    let renderResult: RenderResult;",
+      "",
+      "    beforeEach(() => {",
+      "      renderResult = renderWithTheme(<${TM_FILENAME_BASE/(.*)\\..+$/$1/} />);",
+      "    });",
+      "",
+      "    test('${1:What should be tested?}', () => {",
+      "      $BLOCK_COMMENT_START",
+      "      Example:",
+      "      const { container, rerender, queryByTestId } = renderResult;",
+      "       ",
+      "      expect(container.firstChild).toHaveStyleRule('background-color', lightTheme.palette.primary.light);",
+      "      expect(queryByTestId('test')).toBeFalsy();",
+      "",
+      "      rerender(<Button isButtonDeactivated />);",
+      "",
+      "      expect(container.firstChild).toHaveStyleRule('background-color', lightTheme.palette.primary.dark);",
+      "      expect(queryByTestId('test')).toBeTruthy();",
+      "      $BLOCK_COMMENT_END",
+      "    });",
+      "  });"
+    ],
+    "description": "Test Props Snippet"
   }
 }

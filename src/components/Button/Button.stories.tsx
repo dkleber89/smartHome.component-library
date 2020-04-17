@@ -27,4 +27,5 @@ export const Secondary = (): ReactElement => (
   </Button>
 );
 
-export const Test = (): ReactElement => <OwnButton />;
+export const TestN = (): ReactElement => <OwnButton />;
+export const TestD = (): ReactElement => <OwnButton isButtonDeactivated />;
