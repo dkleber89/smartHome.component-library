@@ -1,6 +1,6 @@
 import { ThemeOptions } from '@material-ui/core';
 
-export default interface ITheme extends ThemeOptions {
+export default interface IThemeOptions extends ThemeOptions {
   name: string;
   palette: {
     type: 'light' | 'dark';

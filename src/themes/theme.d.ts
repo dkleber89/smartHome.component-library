@@ -1,8 +1,7 @@
 import 'styled-components';
-import { Theme } from '@material-ui/core';
-import ITheme from './ITheme';
+import { ITheme } from './createTheme';
 
 declare module 'styled-components' {
-  // eslint-disable-next-line @typescript-eslint/interface-name-prefix
-  export interface DefaultTheme extends Theme, ITheme {}
+  // eslint-disable-next-line @typescript-eslint/interface-name-prefix, @typescript-eslint/no-empty-interface
+  export interface DefaultTheme extends ITheme {}
 }

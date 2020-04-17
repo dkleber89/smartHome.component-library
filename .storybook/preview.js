@@ -4,13 +4,13 @@ import { withThemesProvider } from 'storybook-addon-styled-component-theme';
 import ThemeProvider from './ThemeProvider';
 
 // Component Library Themes
-import LightTheme from '../src/themes/lightTheme';
-import DarkTheme from '../src/themes/darkTheme';
+import lightTheme from '../src/themes/lightTheme';
+import darkTheme from '../src/themes/darkTheme';
 
 // Storybook Theme
 import storybookTheme from './storybookTheme';
 
-const themes = [LightTheme, DarkTheme];
+const themes = [lightTheme, darkTheme];
 
 addParameters({
   options: {
