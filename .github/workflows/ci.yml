@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "*"
+    tags:
+      # normal versions
+      - "v[0-9]+.[0-9]+.[0-9]+"
+      # pre-releases
+      - "v[0-9]+.[0-9]+.[0-9]+-**"
+
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+      fail-fast: true
+
+    steps:
+      - continue-on-error: false
+
+      - name: Checkout Sourcecode
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Perform lint
+        run: npm run lint
+
+      - name: Perform test with Jest over React-Scripts
+        run: npm test
+        env:
+          CI: "true"
