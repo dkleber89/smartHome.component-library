@@ -50,42 +50,4 @@ describe('Button test', () => {
       expect(onClickMock).toHaveBeenCalledTimes(1);
     });
   });
-
-  describe('props', () => {
-    let renderResult: RenderResult;
-
-    beforeEach(() => {
-      renderResult = renderWithTheme(<Button />);
-    });
-
-    test('something', () => {
-      /*
-      Example:
-      const { container, rerender, queryByTestId } = renderResult;
-
-      expect(container.firstChild).toHaveStyleRule('background-color', lightTheme.palette.primary.light);
-      expect(queryByTestId('test')).toBeFalsy();
-
-      rerender(<Button isButtonDeactivated />);
-      expect(container.firstChild).toHaveStyleRule('background-color', lightTheme.palette.primary.dark);
-      expect(queryByTestId('test')).toBeTruthy();
-      */
-    });
-  });
-
-    describe('events', () => {
-      let renderResult: RenderResult;
-      const onClickMock = jest.fn();
-
-      beforeEach(() => {
-        renderResult = renderWithTheme(<Button onClick={onClickMock} />);
-      });
-
-      test('click', () => {
-        // Example when is a click Event e.g. on a Button
-        // fireEvent.click(renderResult.getByText(/Visible Text/));
-
-        expect(onClickMock).toHaveBeenCalledTimes(1);
-      });
-    });
 });
