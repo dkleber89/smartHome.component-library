@@ -6,13 +6,13 @@
 
 ## What it is?
 
-Component Library based on Material-UI adopted for the needs in a SmartHome Solution with a light and a dark Theme.
+Component Library based on Material-UI, adopted for the needs in a SmartHome Solution, with a light and a dark Theme.
 
 Key Features:
 
 - Simplified usage
 - Two different default Themes they meet actual accessibility Standards
-- Many special Components with focus on Smarthome
+- Many special Components with focus on SmartHome
 
 ## Based On
 
