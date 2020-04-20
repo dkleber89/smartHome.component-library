@@ -1,7 +1,7 @@
 {
   "name": "smarthome.component-library",
   "description": "React Component Library for SmartHome Frontend Solutions",
-  "version": "0.1.1",
+  "version": "0.1.0-alpha.1",
   "private": false,
   "license": "MIT",
   "keywords": [
