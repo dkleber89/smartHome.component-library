@@ -14,9 +14,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Debug Action
-        uses: hmarr/debug-action@v1.0.0
-
       - name: Checkout Sourcecode
         uses: actions/checkout@v2
 
@@ -42,7 +39,7 @@ jobs:
     needs: [lint-and-test]
     if: |
       github.event_name == 'pull_request' &&
-      github.base_ref == 'master'
+      github.base_ref == 'release'
 
     runs-on: ubuntu-latest
 
@@ -84,6 +81,7 @@ jobs:
         uses: Klemensas/action-autotag@stable
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          tag_prefix: "v"
 
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
