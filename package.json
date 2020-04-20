@@ -1,12 +1,12 @@
 {
-  "name": "smarthome.component-library",
-  "description": "React Component Library for SmartHome Frontend Solutions based on Material-UI",
+  "name": "smarthome-component-library",
+  "description": "React Component Library for SmartHome Frontend Solutions based on Material UI",
   "version": "0.1.0-alpha.1",
   "private": false,
   "license": "MIT",
   "keywords": [
     "smarthome",
-    "component",
+    "material",
     "react",
     "styled-components"
   ],
@@ -16,7 +16,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dkleber89/smartHome.component-library.git"
+    "url": "https://github.com/dkleber89/smarthome-component-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dkleber89/smarthome-component-library/issues"
   },
   "main": "lib/index.js",
   "module": "lib/index.es.js",
