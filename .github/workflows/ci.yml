@@ -83,7 +83,7 @@ jobs:
             fetch-depth: 2
 
       - name: Tagging
-        uses: salsify/actions-detect-and-tag-new-version@v1
+        uses: salsify/action-detect-and-tag-new-version@v1
 
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
