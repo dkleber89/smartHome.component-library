@@ -1,4 +1,4 @@
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/dkleber89/smartHome.component-library/CI-CD/release?label=CI-CD%20Release&logo=Github) ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/dkleber89/smartHome.component-library/CI-CD/master?label=CI-CD%20Next&logo=Github)
+![GitHub](https://img.shields.io/github/license/dkleber89/smarthome-component-library) ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/dkleber89/smarthome-component-library/CI-CD/release?label=CI-CD%20Release&logo=Github) ![npm (tag)](https://img.shields.io/npm/v/smarthome-component-library/latest) ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/dkleber89/smarthome-component-library/CI-CD/master?label=CI-CD%20Next&logo=Github)
 
 # Under Construction <img width="45" alt="schermafbeelding 2017-09-27 om 23 08 12" src="https://user-images.githubusercontent.com/7254997/30937972-c9632d04-a3d8-11e7-87f3-c44ce2b86d24.png">
 
@@ -28,6 +28,8 @@ Key Features:
   - Unit-, Integration-Testing
 - [ESLint](https://github.com/eslint/eslint), [Prettier](https://github.com/prettier/prettier), [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript)
   - Static code analytics with light adopted Airbnb Javascript Style Guide
+- [Rollup](https://github.com/rollup/rollup)
+  - Build NPM Package
 
 ## Changelog
 
