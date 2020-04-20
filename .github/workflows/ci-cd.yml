@@ -69,7 +69,7 @@ jobs:
     needs: [lint-and-test]
     if: |
       github.event_name == 'push' &&
-      github.ref == 'refs/heads/package-publish'
+      github.ref == 'refs/heads/release'
 
     runs-on: ubuntu-latest
 
