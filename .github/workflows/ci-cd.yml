@@ -1,0 +1,102 @@
+name: CI-CD
+
+on:
+  push:
+    branches:
+      - "*"
+
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Sourcecode
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install Dependencies
+        uses: bahmutov/npm-install@v1.1.0
+
+      - name: Perform lint
+        uses: Borales/actions-yarn@v2.1.0
+        with:
+          cmd: lint
+
+      - name: Perform test with Jest over React-Scripts
+        uses: Borales/actions-yarn@v2.1.0
+        with:
+          cmd: test
+
+  check-version:
+    needs: [lint-and-test]
+    if: |
+      github.event_name == 'pull_request' &&
+      github.base_ref == 'release'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Sourcecode
+        uses: actions/checkout@v2
+
+      - name: Extract Version
+        id: extractVersion
+        uses: EndBug/version-check@v1
+        with:
+          diff-search: "true"
+
+      - name: New Version detected!
+        if: steps.extractVersion.outputs.changed == 'true'
+        run: 'echo "Version change found! New Version: ${{ steps.extractVersion.outputs.version }} (${{ steps.extractVersion.outputs.type }})"'
+
+      - name: No new Version detected! -> Error Log
+        if: steps.extractVersion.outputs.changed == 'false'
+        run: 'echo "No new Version found!! Please update your Version in package.json (SEMANTIC Versioning!!)"'
+
+      - name: No new Version detected! -> Cancel
+        if: steps.extractVersion.outputs.changed == 'false'
+        uses: cutenode/action-always-fail@v1.0.0
+
+  build:
+    needs: [lint-and-test]
+    if: |
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/package-publish'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Sourcecode
+        uses: actions/checkout@v2
+
+      - name: Tagging Branch
+        uses: Klemensas/action-autotag@stable
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          tag_prefix: "v"
+
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install Dependencies
+        uses: bahmutov/npm-install@v1.1.0
+
+      - name: Build Library with Rollup
+        uses: Borales/actions-yarn@v2.1.0
+        with:
+          cmd: build
+
+      - name: Publish to NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.npm }}
