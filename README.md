@@ -1,4 +1,4 @@
-![CI](https://github.com/dkleber89/smartHome.component-library/workflows/CI/badge.svg)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/dkleber89/smartHome.component-library/CI-CD/release?label=CI-CD%20Release&logo=Github) ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/dkleber89/smartHome.component-library/CI-CD/master?label=CI-CD%20Next&logo=Github)
 
 # Under Construction <img width="45" alt="schermafbeelding 2017-09-27 om 23 08 12" src="https://user-images.githubusercontent.com/7254997/30937972-c9632d04-a3d8-11e7-87f3-c44ce2b86d24.png">
 
@@ -31,9 +31,9 @@ Key Features:
 
 ## Changelog
 
-### 0.1.0 (2020-04-18)
+### 0.1.0-alpha.1 (2020-04-20)
 
-- (dkleber89) Under Construction
+- (dkleber89) Test NPM deployment
 
 ## License
 
