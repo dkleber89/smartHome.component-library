@@ -1,4 +1,4 @@
-name: CI
+name: CI-CD
 
 on:
   push:
@@ -51,10 +51,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Extract Version
-        id: 'extractVersion'
+        id: extractVersion
         uses: EndBug/version-check@v1
         with:
-          diff-search: 'true'
+          diff-search: "true"
 
       - name: New Version detected!
         if: steps.extractVersion.outputs.changed == 'true'
@@ -79,11 +79,11 @@ jobs:
     steps:
       - name: Checkout Sourcecode
         uses: actions/checkout@v2
-        with:
-            fetch-depth: 2
 
-      - name: Tagging
-        uses: salsify/action-detect-and-tag-new-version@v1
+      - name: Tagging Branch
+        uses: Klemensas/action-autotag@stable
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
@@ -99,7 +99,6 @@ jobs:
           cmd: build
 
       - name: Publish to NPM
-        uses: Borales/actions-yarn@v2.1.0
+        uses: JS-DevTools/npm-publish@v1
         with:
-          cmd: publish --dry-run
-          auth-token: ${{ secrets.npm }}
+          token: ${{ secrets.npm }}
