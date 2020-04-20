@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Debug Action
         uses: hmarr/debug-action@v1.0.0
-      
+
       - name: Checkout Sourcecode
         uses: actions/checkout@v2
 
@@ -43,7 +43,7 @@ jobs:
     if: |
       github.event_name == 'pull_request' &&
       github.base_ref == 'master'
-      
+
     runs-on: ubuntu-latest
 
     steps:
@@ -72,8 +72,8 @@ jobs:
     needs: [lint-and-test]
     if: |
       github.event_name == 'push' &&
-      github.ref == 'refs/heads/master'
-  
+      github.ref == 'refs/heads/package-publish'
+
     runs-on: ubuntu-latest
 
     steps:
