@@ -1,15 +1,14 @@
-import green from '@material-ui/core/colors/green';
-import purple from '@material-ui/core/colors/purple';
+import { colors } from '@material-ui/core';
 
 import IThemeOptions from './IThemeOptions';
 import createTheme from './createTheme';
 
-const primaryGreen = green[500];
-const accentGreen = green.A200;
-const darkGreen = green[900];
-const primaryPurple = purple[500];
-const accentPurple = purple.A200;
-const darkPurple = purple[900];
+const primaryGreen = colors.green[500];
+const accentGreen = colors.green.A200;
+const darkGreen = colors.green[900];
+const primaryPurple = colors.purple[500];
+const accentPurple = colors.purple.A200;
+const darkPurple = colors.purple[900];
 
 const overridings: IThemeOptions = {
   name: 'Dark Theme',
