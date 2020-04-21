@@ -33,7 +33,7 @@ Key Features:
 
 ## Changelog
 
-### 0.1.0-alpha.1 (2020-04-20)
+### 0.1.0-alpha.2 (2020-04-21)
 
 - (dkleber89) Test NPM deployment
 
