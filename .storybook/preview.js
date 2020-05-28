@@ -1,17 +1,13 @@
 import { addDecorator, addParameters } from '@storybook/react';
 
-import { withThemesProvider } from 'storybook-addon-styled-component-theme';
-import ThemeProvider from './ThemeProvider';
-
-// Component Library Themes
-import lightTheme from '../src/themes/lightTheme';
-import darkTheme from '../src/themes/darkTheme';
+// Theme Contexts
+import { withContexts } from '@storybook/addon-contexts/react';
+import contexts from './contexts';
 
 // Storybook Theme
 import storybookTheme from './storybookTheme';
 
-const themes = [lightTheme, darkTheme];
-
+// Basics
 addParameters({
   options: {
     storySort: (a, b) => {
@@ -27,4 +23,38 @@ addParameters({
   },
 });
 
-addDecorator(withThemesProvider(themes, ThemeProvider));
+// Viewport
+addParameters({
+  viewport: {
+    viewports: {
+      small: {
+        name: 'small',
+        type: 'mobile',
+        styles: {
+          width: '320px',
+          height: '100%',
+        },
+      },
+      medium: {
+        name: 'medium',
+        type: 'tablet',
+        styles: {
+          width: '640px',
+          height: '100%',
+        },
+      },
+      large: {
+        name: 'large',
+        type: 'desktop',
+        styles: {
+          width: '1024px',
+          height: '100%',
+        },
+      },
+    },
+    defaultViewport: 'responsive',
+  },
+});
+
+// Custom Contexts
+addDecorator(withContexts(contexts));

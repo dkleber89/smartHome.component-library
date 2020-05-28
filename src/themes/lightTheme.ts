@@ -1,29 +1,20 @@
-import { colors } from '@material-ui/core';
-
 import IThemeOptions from './IThemeOptions';
 import createTheme from './createTheme';
-
-const primaryGreen = colors.green[500];
-const accentGreen = colors.green.A200;
-const darkGreen = colors.green[900];
-const primaryPurple = colors.purple[500];
-const accentPurple = colors.purple.A200;
-const darkPurple = colors.purple[900];
 
 const overridings: IThemeOptions = {
   name: 'Light Theme',
   palette: {
     type: 'light',
     primary: {
-      light: accentGreen,
-      main: primaryGreen,
-      dark: darkGreen,
+      light: '#718792',
+      main: '#455a64',
+      dark: '#1c313a',
       contrastText: '#fff',
     },
     secondary: {
-      light: accentPurple,
-      main: primaryPurple,
-      dark: darkPurple,
+      light: '#9c4dcc',
+      main: '#6a1b9a',
+      dark: '#38006b',
       contrastText: '#fff',
     },
   },
