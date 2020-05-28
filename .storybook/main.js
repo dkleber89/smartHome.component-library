@@ -5,7 +5,8 @@ module.exports = {
     '@storybook/addon-actions',
     '@storybook/addon-links',
     '@storybook/addon-knobs',
-    'storybook-addon-styled-component-theme/dist/register',
+    '@storybook/addon-contexts/register',
+    '@storybook/addon-viewport/register',
     { name: '@storybook/addon-docs', options: { configureJSX: true } },
   ],
 };
