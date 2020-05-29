@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, number } from '@storybook/addon-knobs';
 
 import ValueBar from './ValueBar';
 
@@ -8,10 +8,10 @@ export default {
   component: ValueBar,
   decorators: [withKnobs],
   parameters: {
-    info: `
-    ### Additional Markdown Information about this Component
-    `,
+    info: ``,
   },
 };
 
-export const Default = (): ReactElement => <ValueBar />;
+export const DefaultValues = (): ReactElement => <ValueBar value={number('Value', 80, { min: 0, max: 100 })} />;
+export const CustomValues = (): ReactElement => <ValueBar min={-500} max={500} value={250} unit="mm" />;
+export const ProgressIndeterminate = (): ReactElement => <ValueBar />;
